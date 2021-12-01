@@ -14,7 +14,7 @@ collections:
     create: true
     slug: "index"
     path: "{{title}}/index"
-    preview_path: "blog/{{year}}/{{month}}/{{slug}}"
+    preview_path: "blog/{{slug}}"
     fields:
       - {
           name: path,
