@@ -19,7 +19,7 @@ collections:
       - {
           name: path,
           label: Path,
-          default: blog/slug-id-or-name,
+          default: /blog/slug-id-or-name,
           comment: "The URL path that this blog will be accessed on",
         }
       - { name: date, label: Date, widget: datetime }
