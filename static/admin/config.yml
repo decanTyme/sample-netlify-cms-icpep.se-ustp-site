@@ -1,9 +1,11 @@
 backend:
   name: git-gateway
-  branch: base # Branch to update (optional; defaults to master)
+  branch: base
 
 media_folder: static/assets
 public_folder: /assets
+
+publish_mode: editorial_workflow
 
 collections:
   - name: blog
@@ -13,7 +15,12 @@ collections:
     slug: "index"
     path: "{{title}}/index"
     fields:
-      - { name: path, label: Path }
+      - {
+          name: path,
+          label: Path,
+          default: blog/slug-id-or-name,
+          comment: "The URL path that this blog will be accessed on",
+        }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
@@ -23,7 +30,11 @@ collections:
     folder: content/events
     create: true
     fields:
-      - { name: path, label: Path }
+      - {
+          name: path,
+          label: Path,
+          comment: "The URL path that this blog will be accessed on",
+        }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
