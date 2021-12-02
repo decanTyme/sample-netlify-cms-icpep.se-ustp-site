@@ -12,16 +12,16 @@ collections:
     label: Blog
     folder: content/blogs
     create: true
-    slug: "index"
-    path: "{{title}}/index"
-    preview_path: "blog/{{slug}}"
+    slug: "{{slug}}"
+    path: "{{year}}/{{month}}/{{title}}"
+    preview_path: "{{fields.path}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
     fields:
       - {
           label: Path,
           name: path,
-          default: /blog/slug-id-or-name,
+          default: /slug-id-or-name,
           comment: "The URL path that this blog will be accessed on",
         }
       - { label: Date, name: date, widget: datetime }

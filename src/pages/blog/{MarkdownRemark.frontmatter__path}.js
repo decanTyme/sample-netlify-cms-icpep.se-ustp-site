@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import AppShell from "../components/AppShell"
+import AppShell from "../../components/AppShell"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function Template({
@@ -25,9 +25,6 @@ export default function Template({
           className="mx-auto"
           imgClassName="img-fluid"
           alt={`[${type}] ${title}`}
-          width={500}
-          objectPosition="50% 10%"
-          objectFit="cover"
         />
       </div>
 
