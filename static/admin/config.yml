@@ -14,7 +14,7 @@ collections:
     create: true
     slug: "{{slug}}"
     path: "{{year}}/{{month}}/{{title}}"
-    preview_path: "blog/{{slug}}"
+    preview_path: "{{fields.path}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
     fields:
