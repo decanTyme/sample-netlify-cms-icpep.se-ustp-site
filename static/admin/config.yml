@@ -12,8 +12,8 @@ collections:
     label: Blog
     folder: content/blogs
     create: true
-    slug: "index"
-    path: "{{title}}/index"
+    slug: "{{slug}}"
+    path: "{{year}}/{{month}}/{{title}}/{{slug}}"
     preview_path: "blog/{{slug}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
