@@ -12,9 +12,9 @@ collections:
     label: Blog
     folder: content/blogs
     create: true
-    slug: "index"
-    path: "{{title}}/index"
-    preview_path: "blog/{{slug}}"
+    slug: "{{slug}}"
+    path: "{{year}}/{{month}}/{{title}}"
+    preview_path: "{{fields.path}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
     fields:
