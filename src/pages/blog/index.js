@@ -9,7 +9,6 @@ function BlogIndexPage({
     allMarkdownRemark: { edges },
   },
 }) {
-  console.log(edges[0].node)
   return (
     <AppShell>
       {/* <section className="position-relative">
@@ -35,9 +34,8 @@ function BlogIndexPage({
 
         <div className="row">
           {edges.slice(0, 2).map((edge) => (
-            <div className="col-sm-6">
+            <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
-                key={edge.node.id}
                 path={edge.node.frontmatter.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}
@@ -54,9 +52,8 @@ function BlogIndexPage({
 
         <div className="row">
           {edges.map((edge) => (
-            <div className="col-sm-6">
+            <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
-                key={edge.node.id}
                 path={edge.node.frontmatter.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}

@@ -15,6 +15,8 @@ collections:
     slug: "index"
     path: "{{title}}/index"
     preview_path: "blog/{{slug}}"
+    summary: "Version: {{version}} - {{title}}"
+    sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
     fields:
       - {
           label: Path,
@@ -35,11 +37,15 @@ collections:
           name: title,
           comment: This is a multiline comment,
           widget: string,
-          pattern: [".{20,}", "Must have at least 20 characters"],
         }
       - { label: Layout, name: layout, widget: hidden, default: blog }
       - { label: Featured Image, name: thumbnail, widget: image }
-      - { label: Body, name: body, widget: markdown }
+      - {
+          label: Body,
+          name: body,
+          widget: markdown,
+          pattern: [".{20,}", "Must have at least 20 characters"],
+        }
 
   - name: event
     label: Event
