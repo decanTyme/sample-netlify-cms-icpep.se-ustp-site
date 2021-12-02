@@ -4,6 +4,7 @@ path: /blog/test-3
 date: 2021-12-01T18:14:01.802Z
 type: announcement
 title: Test 3
+thumbnail: 173646269_295944685260657_220985414363137099_n.jpg
 ---
 
 <!--StartFragment-->

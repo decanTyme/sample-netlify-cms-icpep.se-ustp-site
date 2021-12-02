@@ -32,12 +32,7 @@ collections:
           options: ["announcement", "updates", "others"],
           default: announcement,
         }
-      - {
-          label: Title,
-          name: title,
-          comment: This is a multiline comment,
-          widget: string,
-        }
+      - { label: Title, name: title, widget: string }
       - { label: Layout, name: layout, widget: hidden, default: blog }
       - { label: Featured Image, name: thumbnail, widget: image }
       - {

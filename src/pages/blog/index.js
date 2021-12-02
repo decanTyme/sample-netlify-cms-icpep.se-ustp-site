@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import AppShell from "../../components/AppShell"
 import BlogCard from "../../components/BlogCard"
-// import { StaticImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 
 function BlogIndexPage({
   data: {
@@ -29,8 +29,8 @@ function BlogIndexPage({
         </div>
       </section> */}
 
-      <section className="p-4">
-        <h3>Latest News</h3>
+      <section className="p-3 p-md-4">
+        <h3 className="mb-2">Latest News</h3>
 
         <div className="row">
           {edges.slice(0, 2).map((edge) => (
@@ -41,14 +41,15 @@ function BlogIndexPage({
                 type={edge.node.frontmatter.type}
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
+                thumbnail={getImage(edge.node.frontmatter.thumbnail)}
               />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="p-4">
-        <h3>All Blogs</h3>
+      <section className="p-3 p-md-4">
+        <h3 className="mb-2">All Blogs</h3>
 
         <div className="row">
           {edges.map((edge) => (
@@ -59,6 +60,7 @@ function BlogIndexPage({
                 type={edge.node.frontmatter.type}
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
+                thumbnail={getImage(edge.node.frontmatter.thumbnail)}
               />
             </div>
           ))}
@@ -76,6 +78,15 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1200
+                  placeholder: DOMINANT_COLOR
+                  transformOptions: { fit: INSIDE }
+                )
+              }
+            }
             path
             date
             type
