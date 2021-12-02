@@ -17,14 +17,29 @@ collections:
     preview_path: "blog/{{slug}}"
     fields:
       - {
-          name: path,
           label: Path,
+          name: path,
           default: /blog/slug-id-or-name,
           comment: "The URL path that this blog will be accessed on",
         }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { label: Date, name: date, widget: datetime }
+      - {
+          label: Post Type,
+          name: type,
+          widget: select,
+          options: ["announcement", "updates", "others"],
+          default: announcement,
+        }
+      - {
+          label: Title,
+          name: title,
+          comment: This is a multiline comment,
+          widget: string,
+          pattern: [".{20,}", "Must have at least 20 characters"],
+        }
+      - { label: Layout, name: layout, widget: hidden, default: blog }
+      - { label: Featured Image, name: thumbnail, widget: image }
+      - { label: Body, name: body, widget: markdown }
 
   - name: event
     label: Event

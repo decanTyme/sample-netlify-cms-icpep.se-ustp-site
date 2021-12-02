@@ -51,7 +51,14 @@ module.exports = {
       options: {
         footnotes: true,
         gfm: true,
-        plugins: [],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
       },
     },
   ],

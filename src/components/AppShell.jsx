@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.css"
 import React from "react"
 import Navbar from "./Navbar"
 
@@ -6,7 +7,7 @@ function AppShell({ children }) {
     <div className="shell">
       <Navbar />
 
-      {children}
+      <div className="container">{children}</div>
     </div>
   )
 }

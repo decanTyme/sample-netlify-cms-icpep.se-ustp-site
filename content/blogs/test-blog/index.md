@@ -1,6 +1,7 @@
 ---
 path: /blog/test
 date: 2021-12-01T16:10:07.682Z
+type: others
 title: Test Blog
 ---
 

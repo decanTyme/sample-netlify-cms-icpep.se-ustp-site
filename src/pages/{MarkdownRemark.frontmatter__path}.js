@@ -1,26 +1,29 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import AppShell from "../components/AppShell"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+export default function Template({ data }) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
-  return (
-    <div className="blog-post-container">
-      <Link to="/blog">Back to blogs</Link>
+  console.log(html)
 
-      <div className="blog-post">
+  return (
+    <AppShell>
+      <Link to="/blog" className="btn m-2">
+        Back to blogs
+      </Link>
+
+      <div className="px-4">
         <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <p className="text-muted">{frontmatter.date}</p>
 
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-    </div>
+    </AppShell>
   )
 }
 
