@@ -25,9 +25,6 @@ export default function Template({
           className="mx-auto"
           imgClassName="img-fluid"
           alt={`[${type}] ${title}`}
-          width={500}
-          objectPosition="50% 10%"
-          objectFit="cover"
         />
       </div>
 
