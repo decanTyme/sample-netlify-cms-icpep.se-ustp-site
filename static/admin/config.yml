@@ -13,7 +13,7 @@ collections:
     folder: content/blogs
     create: true
     slug: "{{slug}}"
-    path: "{{year}}/{{month}}/{{title}}/{{slug}}"
+    path: "{{year}}/{{month}}/{{title}}"
     preview_path: "blog/{{slug}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
