@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import AppShell from "../components/AppShell"
+import AppShell from "../../components/AppShell"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function Template({

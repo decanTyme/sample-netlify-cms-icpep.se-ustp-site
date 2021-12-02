@@ -1,6 +1,6 @@
 ---
 # The URL path that this blog will be accessed on
-path: /blog/test-4
+path: /test-4
 date: 2021-12-01T18:31:26.810Z
 type: updates
 title: Test 4
