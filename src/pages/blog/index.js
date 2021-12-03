@@ -89,18 +89,18 @@ export const pageQuery = graphql`
           path: gatsbyPath(
             filePath: "/blog/{MarkdownRemark.frontmatter__title}"
           )
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(
+                height: 1200
+                placeholder: DOMINANT_COLOR
+                transformOptions: { fit: INSIDE }
+              )
+            }
+          }
           timeToRead
           frontmatter {
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 1200
-                  placeholder: DOMINANT_COLOR
-                  transformOptions: { fit: INSIDE }
-                )
-              }
-            }
+            thumbnail
             collection
             date
             type
