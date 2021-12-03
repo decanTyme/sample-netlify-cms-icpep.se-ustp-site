@@ -35,6 +35,11 @@ function BlogIndexPage({
         <div className="row">
           {edges.slice(0, 2).map((edge) => (
             <div className="col-sm-6" key={edge.node.id}>
+              {console.log(
+                "@blog/index: ",
+                JSON.stringify(edge.node.thumbnail),
+                "\n\n"
+              )}
               <BlogCard
                 collection={edge.node.frontmatter.collection}
                 path={edge.node.path}
@@ -91,6 +96,15 @@ export const pageQuery = graphql`
           )
           timeToRead
           frontmatter {
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1200
+                  placeholder: DOMINANT_COLOR
+                  transformOptions: { fit: INSIDE }
+                )
+              }
+            }
             collection
             date
             type
