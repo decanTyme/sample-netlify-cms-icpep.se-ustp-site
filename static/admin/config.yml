@@ -38,8 +38,11 @@ collections:
         default: blog
 
       - label: Featured Image
-        name: thumbnail
-        widget: image
+        name: featuredImg
+        widget: object
+        fields:
+          - { label: Featured Image Source, name: thumbnail, widget: image }
+          - { label: Featured Image Alt, name: thumbnailAlt, widget: string }
 
       - label: Body
         name: body

@@ -9,9 +9,11 @@ export default function BlogTemplate({
       thumbnail: thumbnailExt,
       frontmatter: { date, type, title, thumbnail },
       html,
+      timeToRead,
     },
   },
 }) {
+  console.log(timeToRead)
   return (
     <AppShell>
       <Link to="/blog" className="btn m-2">
@@ -32,6 +34,7 @@ export default function BlogTemplate({
       <div className="px-4">
         <h1>{title}</h1>
         <p className="text-muted">{date}</p>
+        <small className="text-muted h6">{timeToRead} min read</small>
 
         <div
           className="blog-post-content"
@@ -47,15 +50,8 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(
-            height: 1200
-            placeholder: DOMINANT_COLOR
-            transformOptions: { fit: INSIDE }
-          )
-        }
-      }
+      thumbnail
+      timeToRead
       frontmatter {
         thumbnail {
           childImageSharp {
