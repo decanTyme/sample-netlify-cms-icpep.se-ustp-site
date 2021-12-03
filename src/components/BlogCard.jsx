@@ -3,7 +3,7 @@ import { formatDistanceToNow, parseISO } from "date-fns"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-function BlogCard({ path, date, type, excerpt, title, thumbnail }) {
+function BlogCard({ collection, path, date, type, excerpt, title, thumbnail }) {
   return (
     <div className="card mb-3">
       <div className="row g-0">
@@ -26,7 +26,7 @@ function BlogCard({ path, date, type, excerpt, title, thumbnail }) {
               </small>
             </p>
 
-            <Link to={path}>See more</Link>
+            <Link to={`/${collection}${path}`}>See more</Link>
           </div>
         </div>
       </div>

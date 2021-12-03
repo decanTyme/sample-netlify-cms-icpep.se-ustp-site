@@ -1,20 +1,21 @@
 ---
 # The URL path that this blog will be accessed on
-path: /blog/test-6
+collection: blog
+path: /test-6
 date: 2021-12-02T22:41:35.414Z
 type: announcement
 title: Test 6
-layout: blog
-thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
 ---
+
 # Laborum velit ipsum Lorem do sit labore est duis ea
+
 <!--StartFragment-->
 
 Aliquip excepteur duis eiusmod sit anim laboris fugiat mollit sunt proident elit consectetur. Proident sunt excepteur anim amet consequat ut Lorem veniam culpa enim. Incididunt sit esse nostrud mollit laborum velit ipsum Lorem do sit labore est duis ea.
 
 <!--EndFragment-->
 
-> Veniam culpa aliquip sunt veniam culpa veniam voluptate officia laborum. 
+> Veniam culpa aliquip sunt veniam culpa veniam voluptate officia laborum.
 
 <!--StartFragment-->
 
@@ -22,10 +23,10 @@ In cillum amet duis voluptate non cupidatat laborum ex consectetur velit ad. Lab
 
 <!--EndFragment-->
 
-* Lorem
-* Ipsum
-* Amet
-* Minim
+- Lorem
+- Ipsum
+- Amet
+- Minim
 
 <!--StartFragment-->
 
@@ -66,4 +67,4 @@ Et aliquip consectetur minim quis veniam aliqua. Cupidatat commodo aliquip deser
 
 Consequat anim officia id nulla eu laborum deserunt nostrud. Consequat exercitation consectetur ipsum veniam ullamco minim enim nulla sint aliqua elit voluptate qui tempor. Pariatur sint proident esse eu. Ex nisi nulla non dolore ex ex sunt in ex elit in culpa. Nisi id in consectetur excepteur nisi duis reprehenderit qui. Irure laborum nisi ea mollit pariatur ullamco ad ex.
 
-<!--EndFragment-->﻿
+<!--EndFragment-->

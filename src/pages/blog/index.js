@@ -36,6 +36,7 @@ function BlogIndexPage({
           {edges.slice(0, 2).map((edge) => (
             <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
+                collection={edge.node.frontmatter.collection}
                 path={edge.node.frontmatter.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}
@@ -55,6 +56,7 @@ function BlogIndexPage({
           {edges.map((edge) => (
             <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
+                collection={edge.node.frontmatter.collection}
                 path={edge.node.frontmatter.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}
@@ -87,6 +89,7 @@ export const pageQuery = graphql`
                 )
               }
             }
+            collection
             path
             date
             type
