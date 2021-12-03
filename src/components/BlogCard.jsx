@@ -26,7 +26,7 @@ function BlogCard({ collection, path, date, type, excerpt, title, thumbnail }) {
               </small>
             </p>
 
-            <Link to={`/${collection}${path}`}>See more</Link>
+            <Link to={path}>See more</Link>
           </div>
         </div>
       </div>

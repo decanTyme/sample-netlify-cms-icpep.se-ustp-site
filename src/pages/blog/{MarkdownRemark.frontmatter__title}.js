@@ -3,9 +3,10 @@ import { graphql, Link } from "gatsby"
 import AppShell from "../../components/AppShell"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default function Template({
+export default function BlogTemplate({
   data: {
     markdownRemark: {
+      thumbnail: thumbnailExt,
       frontmatter: { date, type, title, thumbnail },
       html,
     },
@@ -21,7 +22,7 @@ export default function Template({
 
       <div className="d-flex mb-2">
         <GatsbyImage
-          image={getImage(thumbnail)}
+          image={getImage(thumbnailExt || thumbnail)}
           className="mx-auto"
           imgClassName="img-fluid"
           alt={`[${type}] ${title}`}
@@ -45,6 +46,16 @@ export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
+      thumbnail {
+        childImageSharp {
+          gatsbyImageData(
+            height: 1200
+            placeholder: DOMINANT_COLOR
+            transformOptions: { fit: INSIDE }
+          )
+        }
+      }
       frontmatter {
         thumbnail {
           childImageSharp {
@@ -56,7 +67,6 @@ export const pageQuery = graphql`
           }
         }
         date(formatString: "MMMM DD, YYYY")
-        path
         title
       }
     }

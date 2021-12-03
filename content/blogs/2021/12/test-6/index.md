@@ -1,10 +1,10 @@
 ---
 # The URL path that this blog will be accessed on
 collection: blog
-path: /test-6
-date: 2021-12-02T22:41:35.414Z
+date: 2021-12-02
 type: announcement
 title: Test 6
+thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
 ---
 
 # Laborum velit ipsum Lorem do sit labore est duis ea

@@ -1,9 +1,9 @@
 ---
 collection: blog
-path: /test-2
 date: 2021-12-01T16:10:07.682Z
 type: announcement
 title: Test 2
+thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
 ---
 
 <!--StartFragment-->

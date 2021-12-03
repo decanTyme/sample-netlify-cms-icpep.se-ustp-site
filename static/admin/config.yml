@@ -14,18 +14,13 @@ collections:
     create: true
     slug: index
     path: "{{year}}/{{month}}/{{title}}/index"
-    preview_path: "blog/{{fields.path}}"
+    preview_path: "blog/{{fields.title}}"
     summary: "Version: {{version}} - {{title}}"
     sortable_fields: ["commit_date", "title", "commit_author", "language.en"]
     fields:
-      - label: Path
-        name: path
-        default: /slug-id-or-name
-        comment: "The URL path that this blog will be accessed on"
-
       - label: Date
         name: date
-        widget: datetime
+        widget: date
 
       - label: Post Type
         name: type
@@ -45,7 +40,6 @@ collections:
       - label: Featured Image
         name: thumbnail
         widget: image
-        choose_url: false
 
       - label: Body
         name: body

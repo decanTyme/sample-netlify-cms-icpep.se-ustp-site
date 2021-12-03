@@ -37,12 +37,14 @@ function BlogIndexPage({
             <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
                 collection={edge.node.frontmatter.collection}
-                path={edge.node.frontmatter.path}
+                path={edge.node.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
-                thumbnail={getImage(edge.node.frontmatter.thumbnail)}
+                thumbnail={getImage(
+                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
+                )}
               />
             </div>
           ))}
@@ -57,12 +59,14 @@ function BlogIndexPage({
             <div className="col-sm-6" key={edge.node.id}>
               <BlogCard
                 collection={edge.node.frontmatter.collection}
-                path={edge.node.frontmatter.path}
+                path={edge.node.path}
                 date={edge.node.frontmatter.date}
                 type={edge.node.frontmatter.type}
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
-                thumbnail={getImage(edge.node.frontmatter.thumbnail)}
+                thumbnail={getImage(
+                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
+                )}
               />
             </div>
           ))}
@@ -74,11 +78,26 @@ function BlogIndexPage({
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { collection: { eq: "blog" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           id
           excerpt(pruneLength: 250)
+          path: gatsbyPath(
+            filePath: "/blog/{MarkdownRemark.frontmatter__title}"
+          )
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(
+                height: 1200
+                placeholder: DOMINANT_COLOR
+                transformOptions: { fit: INSIDE }
+              )
+            }
+          }
           frontmatter {
             thumbnail {
               childImageSharp {
@@ -90,7 +109,6 @@ export const pageQuery = graphql`
               }
             }
             collection
-            path
             date
             type
             title
