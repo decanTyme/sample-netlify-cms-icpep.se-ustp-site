@@ -1,6 +1,6 @@
 ---
 # The URL path that this blog will be accessed on
-path: /test8
+path: /test-8
 date: 2021-12-03T10:28:19.309Z
 type: announcement
 title: Test 8
