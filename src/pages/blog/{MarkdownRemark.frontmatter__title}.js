@@ -13,7 +13,6 @@ export default function BlogTemplate({
     },
   },
 }) {
-  console.log("thumbnail", thumbnail, "thumbnailExt", thumbnailExt)
   return (
     <AppShell>
       <Link to="/blog" className="btn m-2">
@@ -50,18 +49,8 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(
-            height: 1200
-            placeholder: DOMINANT_COLOR
-            transformOptions: { fit: INSIDE }
-          )
-        }
-      }
       timeToRead
       frontmatter {
-        thumbnail
         date(formatString: "MMMM DD, YYYY")
         title
       }
