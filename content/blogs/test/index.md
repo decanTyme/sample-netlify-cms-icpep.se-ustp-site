@@ -1,8 +1,9 @@
 ---
-path: /blog/test
+collection: blog
+path: /test
 date: 2021-12-01T16:10:07.682Z
 type: others
-title: Test Blog
+title: Test
 ---
 
 <!--StartFragment-->
