@@ -35,11 +35,7 @@ function BlogIndexPage({
         <div className="row">
           {edges.slice(0, 2).map((edge) => (
             <div className="col-sm-6" key={edge.node.id}>
-              {console.log(
-                "@blog/index: ",
-                JSON.stringify(edge.node.thumbnail),
-                "\n\n"
-              )}
+              {console.log("@blog/index: ", edge.node.thumbnailExt, "\n\n")}
               <BlogCard
                 collection={edge.node.frontmatter.collection}
                 path={edge.node.path}
@@ -48,7 +44,7 @@ function BlogIndexPage({
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
                 thumbnail={getImage(
-                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
+                  edge.node.thumbnailExt || edge.node.frontmatter.thumbnail
                 )}
               />
             </div>
@@ -70,7 +66,7 @@ function BlogIndexPage({
                 excerpt={edge.node.excerpt}
                 title={edge.node.frontmatter.title}
                 thumbnail={getImage(
-                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
+                  edge.node.thumbnailExt || edge.node.frontmatter.thumbnail
                 )}
               />
             </div>
@@ -94,6 +90,15 @@ export const pageQuery = graphql`
           path: gatsbyPath(
             filePath: "/blog/{MarkdownRemark.frontmatter__title}"
           )
+          thumbnailExt {
+            childImageSharp {
+              gatsbyImageData(
+                height: 1200
+                placeholder: DOMINANT_COLOR
+                transformOptions: { fit: INSIDE }
+              )
+            }
+          }
           timeToRead
           frontmatter {
             thumbnail {

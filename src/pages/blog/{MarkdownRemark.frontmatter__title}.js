@@ -6,17 +6,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 export default function BlogTemplate({
   data: {
     markdownRemark: {
-      thumbnail: thumbnailExt,
+      thumbnailExt,
       frontmatter: { date, type, title, thumbnail },
       html,
       timeToRead,
     },
   },
 }) {
-  console.log(
-    "@{MarkdownRemark.frontmatter__title}:",
-    JSON.stringify(thumbnailExt, "\n\n")
-  )
+  console.log("@{MarkdownRemark.frontmatter__title}:", thumbnailExt, "\n\n")
+
+  console.log(process.env)
   return (
     <AppShell>
       <Link to="/blog" className="btn m-2">
@@ -53,17 +52,18 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
+      thumbnailExt {
+        childImageSharp {
+          gatsbyImageData(
+            height: 1200
+            placeholder: DOMINANT_COLOR
+            transformOptions: { fit: INSIDE }
+          )
+        }
+      }
       timeToRead
       frontmatter {
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              height: 1200
-              placeholder: DOMINANT_COLOR
-              transformOptions: { fit: INSIDE }
-            )
-          }
-        }
+        thumbnail
         date(formatString: "MMMM DD, YYYY")
         title
       }
