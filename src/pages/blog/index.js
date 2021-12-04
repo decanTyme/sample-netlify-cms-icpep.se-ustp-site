@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image"
 
 function BlogIndexPage({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { nodes },
   },
 }) {
   return (
@@ -33,18 +33,16 @@ function BlogIndexPage({
         <h3 className="mb-2">Latest News</h3>
 
         <div className="row">
-          {edges.slice(0, 2).map((edge) => (
-            <div className="col-sm-6" key={edge.node.id}>
+          {nodes.slice(0, 2).map((node) => (
+            <div className="col-sm-6" key={node.id}>
               <BlogCard
-                collection={edge.node.frontmatter.collection}
-                path={edge.node.path}
-                date={edge.node.frontmatter.date}
-                type={edge.node.frontmatter.type}
-                excerpt={edge.node.excerpt}
-                title={edge.node.frontmatter.title}
-                thumbnail={getImage(
-                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
-                )}
+                collection={node.frontmatter.collection}
+                path={node.path}
+                date={node.frontmatter.date}
+                type={node.frontmatter.type}
+                excerpt={node.excerpt}
+                title={node.frontmatter.title}
+                thumbnail={getImage(node.frontmatter.thumbnail)}
               />
             </div>
           ))}
@@ -55,18 +53,16 @@ function BlogIndexPage({
         <h3 className="mb-2">All Blogs</h3>
 
         <div className="row">
-          {edges.map((edge) => (
-            <div className="col-sm-6" key={edge.node.id}>
+          {nodes.map((node) => (
+            <div className="col-sm-6" key={node.id}>
               <BlogCard
-                collection={edge.node.frontmatter.collection}
-                path={edge.node.path}
-                date={edge.node.frontmatter.date}
-                type={edge.node.frontmatter.type}
-                excerpt={edge.node.excerpt}
-                title={edge.node.frontmatter.title}
-                thumbnail={getImage(
-                  edge.node.thumbnail || edge.node.frontmatter.thumbnail
-                )}
+                collection={node.frontmatter.collection}
+                path={node.path}
+                date={node.frontmatter.date}
+                type={node.frontmatter.type}
+                excerpt={node.excerpt}
+                title={node.frontmatter.title}
+                thumbnail={getImage(node.frontmatter.thumbnail)}
               />
             </div>
           ))}
@@ -82,20 +78,25 @@ export const pageQuery = graphql`
       filter: { frontmatter: { collection: { eq: "blog" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          path: gatsbyPath(
-            filePath: "/blog/{MarkdownRemark.frontmatter__title}"
-          )
-          timeToRead
-          frontmatter {
-            collection
-            date
-            type
-            title
+      nodes {
+        id
+        excerpt(pruneLength: 250)
+        path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
+        timeToRead
+        frontmatter {
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(
+                height: 1200
+                placeholder: DOMINANT_COLOR
+                transformOptions: { fit: INSIDE }
+              )
+            }
           }
+          collection
+          date
+          type
+          title
         }
       }
     }

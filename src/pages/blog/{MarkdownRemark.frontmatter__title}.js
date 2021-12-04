@@ -6,7 +6,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 export default function BlogTemplate({
   data: {
     markdownRemark: {
-      thumbnail: thumbnailExt,
       frontmatter: { date, type, title, thumbnail },
       html,
       timeToRead,
@@ -23,7 +22,7 @@ export default function BlogTemplate({
 
       <div className="d-flex mb-2">
         <GatsbyImage
-          image={getImage(thumbnailExt || thumbnail)}
+          image={getImage(thumbnail)}
           className="mx-auto"
           imgClassName="img-fluid"
           alt={`[${type}] ${title}`}
@@ -51,6 +50,15 @@ export const pageQuery = graphql`
       path: gatsbyPath(filePath: "/blog/{MarkdownRemark.frontmatter__title}")
       timeToRead
       frontmatter {
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              height: 1200
+              placeholder: DOMINANT_COLOR
+              transformOptions: { fit: INSIDE }
+            )
+          }
+        }
         date(formatString: "MMMM DD, YYYY")
         title
       }
