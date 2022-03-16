@@ -3,7 +3,7 @@ collection: blog
 date: 2021-12-01T16:10:07.682Z
 type: others
 title: Test
-thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
+# thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
 ---
 
 <!--StartFragment-->

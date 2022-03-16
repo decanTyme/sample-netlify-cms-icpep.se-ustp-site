@@ -4,7 +4,7 @@ collection: blog
 date: 2021-12-01T18:31:26.810Z
 type: updates
 title: Test 4
-thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
+# thumbnail: https://www.evidentlycochrane.net/wp-content/uploads/2020/02/crowd-of-young-people.jpg
 ---
 
 <!--StartFragment-->
