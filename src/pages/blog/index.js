@@ -1,4 +1,3 @@
-import React from "react"
 import { graphql } from "gatsby"
 import AppShell from "../../components/AppShell"
 import BlogCard from "../../components/BlogCard"

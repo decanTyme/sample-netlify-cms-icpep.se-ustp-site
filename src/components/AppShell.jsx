@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css"
-import React from "react"
+import "@fontsource/montserrat"
+import "@fontsource/orbitron"
+import "@fontsource/ubuntu"
 import { Helmet } from "react-helmet"
 import Navbar from "./Navbar"
 

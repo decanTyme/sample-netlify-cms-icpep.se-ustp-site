@@ -1,4 +1,3 @@
-import React from "react"
 import { formatDistanceToNow, parseISO } from "date-fns"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"

@@ -1,4 +1,7 @@
+/** @type {import("gatsby").GatsbyConfig} */
 module.exports = {
+  jsxRuntime: "automatic",
+  trailingSlash: "never",
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Sample Netlify CMS ICpEP.SE USTP Site",
