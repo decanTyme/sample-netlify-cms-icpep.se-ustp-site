@@ -7,7 +7,6 @@ module.exports = {
     title: "Sample Netlify CMS ICpEP.SE USTP Site",
   },
   plugins: [
-    "gatsby-plugin-netlify",
     "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-plugin-google-analytics",
@@ -65,5 +64,7 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-percy",
   ],
 }
