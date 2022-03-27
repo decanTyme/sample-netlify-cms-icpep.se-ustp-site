@@ -12,7 +12,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format:checkonly": "prettier . -c",
+    "format": "prettier . -w"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.5",

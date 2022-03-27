@@ -16,7 +16,7 @@ function BlogCard({ collection, path, date, type, excerpt, title, thumbnail }) {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <p className="card-text text-uppercase mb-1 text-muted">{type}</p>
+            <p className="card-text text-uppercase text-muted mb-1">{type}</p>
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{excerpt}</p>
             <p className="card-text">

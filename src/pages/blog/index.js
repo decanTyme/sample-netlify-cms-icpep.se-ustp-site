@@ -28,7 +28,7 @@ function BlogIndexPage({
         </div>
       </section> */}
 
-      <section className="p-3 p-md-4">
+      <section className="p-md-4 p-3">
         <h3 className="mb-2">Latest News</h3>
 
         <div className="row">
@@ -48,7 +48,7 @@ function BlogIndexPage({
         </div>
       </section>
 
-      <section className="p-3 p-md-4">
+      <section className="p-md-4 p-3">
         <h3 className="mb-2">All Blogs</h3>
 
         <div className="row">
